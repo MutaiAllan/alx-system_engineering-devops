@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-# REgex that matches hbtn, hbttn, hbtttn, hbttttn
+# REgex that matches hbtn, hbttn, hbtttn, hbttttn...
 
-puts ARGV[0].scan(/hbt{2,5}n/).join
+puts ARGV[0].scan(/hbt+n/).join

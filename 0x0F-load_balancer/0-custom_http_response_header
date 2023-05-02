@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Configures Nginx HTTTp header name to X-Served-By and
+# value to the hostname of server Nginx is running on.
+
+sudo sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\tadd_header X-Served-By \"$HOSTNAME\";/" /etc/nginx/nginx.conf
+sudo service nginx restart

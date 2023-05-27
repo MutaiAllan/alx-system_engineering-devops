@@ -11,7 +11,7 @@ if __name__ == "__main__":
     user = requests.get(restapi + "users/{}".format(sys.argv[1])).json()
     todores = requests.get(restapi + "todos", params={"userId": sys.argv[1]})
     todo = todores.json()
-    name = user.get("username")
+    name = user.get("name")
 
     cdone = 0
     done = []

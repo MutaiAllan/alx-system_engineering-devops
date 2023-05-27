@@ -11,6 +11,7 @@ if __name__ == "__main__":
     user = requests.get(restapi + "users/{}".format(sys.argv[1])).json()
     todores = requests.get(restapi + "todos", params={"userId": sys.argv[1]})
     todo = todores.json()
+    name = user.get("username")
 
     cdone = 0
     done = []
@@ -21,7 +22,7 @@ if __name__ == "__main__":
             cdone += 1
 
     print("Employee {} is done with tasks({}/{}):"
-          .format(user, cdone, len(todo)))
+          .format(name, cdone, len(todo)))
 
     for task in done:
         print("\t {}".format(task.get('title')))
